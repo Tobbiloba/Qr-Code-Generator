@@ -3,6 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --h1-font-size: 21px;
+  --p-font-size: 19px;
+}
 body {
   display: flex;
   align-items: center;
@@ -22,12 +26,12 @@ body {
   height: 530px;
 }
 .header h1 {
-  font-size: 21px;
+  font-size: var(--h1-font-size);
   font-weight: 500;
 }
 .header p {
   color: blueviolet;
-  font-size: 16px;
+  font-size: var(--p-font-size);
   margin-top: 10px;
 }
 .wrapper .form {
@@ -65,4 +69,49 @@ body {
   opacity: 1;
   pointer-events: auto;
   transition: opacity 0.5s 0.5s ease;
+}
+
+@media only screen and (max-width: 600px) {
+  .h1 {
+    font-size: 18px;
+  }
+  .p {
+    font-size: 13px;
+  }
+  .wrapper {
+    height: 260px;
+    max-width: 300px;
+    border-radius: 7px;
+    background: #fff;
+    padding: 16px 25px;
+    transition: height 0.25 ease;
+  }
+  .wrapper.active {
+    height: 530px;
+  }
+  .header h1 {
+    font-size: var(--h1-font-size);
+    font-weight: 500;
+  }
+  .header p {
+    color: blueviolet;
+    font-size: var(--p-font-size);
+    margin-top: 10px;
+  }
+  .wrapper .form {
+    margin: 20px 0 25px;
+  }
+  .form :where(input, button) {
+    width: 100%;
+    height: 45px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+  }
+  .form input {
+    font-size: 18px;
+    height: 50px;
+    padding: 0 17px;
+    border: 1px solid#999;
+  }
 }
